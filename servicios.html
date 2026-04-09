@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESCRICH - Servicios Profesionales</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        .tarjeta ul { text-align: left; padding: 0; margin-top: 15px; list-style: none; }
+        .tarjeta ul li { margin-bottom: 8px; font-size: 0.9rem; position: relative; padding-left: 20px; color: #555; }
+        .tarjeta ul li::before { content: "✓"; color: #c5a059; position: absolute; left: 0; font-weight: bold; }
+        
+        .whatsapp-fixed { position: fixed; bottom: 20px; right: 20px; width: 45px; height: 45px; z-index: 10000; transition: transform 0.3s ease; }
+        .whatsapp-fixed img { width: 100%; height: 100%; display: block; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2)); }
+        .whatsapp-fixed:hover { transform: scale(1.1); }
+
+        .cta-final-servicios { text-align: center; background: #f4f1ea; padding: 40px; border-radius: 15px; margin: 40px 20px; border: 1px solid #e0d9c8; }
+        .servicios { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; padding: 20px; }
+        .tarjeta { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); text-align: center; transition: 0.3s; }
+        .tarjeta:hover { transform: translateY(-5px); }
+        .icono-servicio { font-size: 2.5rem; color: #c5a059; margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+
+<header>
+    <img src="imagenes/logo.jpeg" class="logo" alt="Logo Escrich">
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <nav id="menu">
+        <a href="index.html">Inicio</a>
+        <a href="empresa.html">Empresa</a>
+        <a href="servicios.html">Servicios</a>
+        <a href="oficinas.html">Oficinas</a>
+        <a href="contacto.html">Contacto</a>
+        <a href="acceso.html" style="background: #c5a059; color: white; padding: 8px 15px; border-radius: 5px; margin-left: 15px; font-weight: bold;">Acceso Clientes</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <img src="imagenes/frachada.png" class="hero-img">
+    <div class="hero-text">
+        <h2>Soluciones Integrales</h2>
+        <p>Todo lo que su comunidad necesita en un solo lugar</p>
+    </div>
+</section>
+
+<section>
+    <div class="servicios">
+        <div class="tarjeta">
+            <i class="fa-solid fa-building-user icono-servicio"></i>
+            <h3>Administración de Fincas</h3>
+            <ul>
+                <li>Contabilidad y control de gastos</li>
+                <li>Emisión de recibos y cobros</li>
+                <li>Convocatoria y actas de Juntas</li>
+                <li>Ejecución de acuerdos comunitarios</li>
+            </ul>
+        </div>
+
+        <div class="tarjeta" style="border: 2px solid #c5a059;">
+            <i class="fa-solid fa-scale-balanced icono-servicio"></i>
+            <h3>Abogados Escrich</h3>
+            <p style="font-weight: bold; color: #c5a059; font-size: 0.8rem;">DEPARTAMENTO PROPIO</p>
+            <ul>
+                <li>Reclamación judicial de morosos</li>
+                <li>Asesoría en Ley de Propiedad Horizontal</li>
+                <li>Redacción y revisión de contratos</li>
+                <li>Defensa jurídica integral</li>
+            </ul>
+        </div>
+
+        <div class="tarjeta">
+            <i class="fa-solid fa-screwdriver-wrench icono-servicio"></i>
+            <h3>Servicios Técnicos</h3>
+            <ul>
+                <li>Gestión 24h de averías e incidencias</li>
+                <li>Coordinación de gremios y reformas</li>
+                <li>Certificados Energéticos</li>
+                <li>Seguimiento de reparaciones</li>
+            </ul>
+        </div>
+
+        <div class="tarjeta">
+            <i class="fa-solid fa-shield-halved icono-servicio"></i>
+            <h3>Seguros y Mediación</h3>
+            <p>Gestión a través de <strong>GSF Bróker</strong>.</p>
+            <ul>
+                <li>Seguros Multirriesgo de Comunidad</li>
+                <li>Seguros de Impago de Alquiler</li>
+                <li>Seguros de Hogar y Vivienda</li>
+                <li>Tramitación directa de siniestros</li>
+            </ul>
+            <p style="margin-top:15px;">Consúltenos: <strong>656 693 708</strong></p>
+        </div>
+
+        <div class="tarjeta">
+            <i class="fa-solid fa-house-lock icono-servicio"></i>
+            <h3>Gestión de Patrimonio</h3>
+            <ul>
+                <li>Gestión integral de alquileres</li>
+                <li>Estudios de solvencia de inquilinos</li>
+                <li>Mantenimiento de inmuebles vacíos</li>
+                <li>Optimización de rentabilidad</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<div class="cta-final-servicios">
+    <h3>¿Busca un servicio integral en Calle Londres?</h3>
+    <p>Estamos a su disposición en el <strong>656 693 708</strong> para cualquier consulta.</p>
+    <br>
+    <a href="contacto.html" class="btn-premium" style="text-decoration:none; padding: 15px 30px;">SOLICITAR PRESUPUESTO</a>
+</div>
+
+<footer>
+    <p>© 2026 ESCRICH Administración de Fincas</p>
+</footer>
+
+<a href="https://wa.me/34656693708" class="whatsapp-fixed" target="_blank">
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+</a>
+
+<script>
+    function toggleMenu(){
+        const menu = document.getElementById("menu");
+        menu.classList.toggle("activo");
+    }
+</script>
+
+</body>
+</html>

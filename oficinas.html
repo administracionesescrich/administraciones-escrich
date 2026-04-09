@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESCRICH - Oficinas y Ubicación</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        /* Estilos específicos para la página de oficinas */
+        .contenedor-oficina {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 30px;
+        }
+        .info-cuadro {
+            background: #f9f9f9;
+            padding: 30px;
+            border-radius: 10px;
+            border-left: 5px solid #c5a059;
+        }
+        .info-cuadro h3 {
+            color: #1f4d3a;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .horarios-lista {
+            list-style: none;
+            padding: 0;
+            line-height: 2;
+        }
+        .btn-mapa {
+            display: block;
+            text-align: center;
+            background: #1f4d3a;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: 0.3s;
+        }
+        .btn-mapa:hover {
+            background: #c5a059;
+        }
+        
+        /* Botón de WhatsApp pequeño en la esquina */
+        .whatsapp-fixed {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 45px;
+            height: 45px;
+            z-index: 10000;
+            transition: transform 0.3s ease;
+        }
+        .whatsapp-fixed img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+        }
+        .btn-acceso {
+            background: #c5a059;
+            color: white !important;
+            padding: 8px 15px;
+            border-radius: 5px;
+            margin-left: 15px;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .contenedor-oficina { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <img src="imagenes/logo.jpeg" class="logo" alt="Logo Escrich">
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <nav id="menu">
+        <a href="index.html">Inicio</a>
+        <a href="empresa.html">Empresa</a>
+        <a href="servicios.html">Servicios</a>
+        <a href="oficinas.html">Oficinas</a>
+        <a href="contacto.html">Contacto</a>
+        <a href="acceso.html" class="btn-acceso">Acceso Clientes</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <img src="imagenes/frachada.png" class="hero-img">
+    <div class="hero-text">
+        <h2>Nuestra Oficina</h2>
+        <p>Atención personalizada en el corazón de Torrejón de Ardoz</p>
+    </div>
+</section>
+
+<section data-animate>
+    <h2>Dónde encontrarnos</h2>
+    
+    <div class="contenedor-oficina">
+        <div class="mapa-wrapper">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3035.787143431633!2d-3.4795368!3d40.4578508!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4236056f70a75f%3A0x6e9a7e6e5e6e5e6e!2sTorrej%C3%B3n%20de%20Ardoz%2C%20Madrid!5e0!3m2!1ses!2ses!4v1700000000000" 
+                    width="100%" height="350" style="border:0; border-radius:10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);" allowfullscreen="" loading="lazy"></iframe>
+            <a href="https://maps.google.com" target="_blank" class="btn-mapa">
+                <i class="fa-solid fa-location-dot"></i> CÓMO LLEGAR
+            </a>
+        </div>
+
+        <div class="info-cuadro">
+            <h3><i class="fa-solid fa-clock"></i> Horario de Atención</h3>
+            <ul class="horarios-lista">
+                <li><strong>Lunes a Jueves:</strong> 09:00 - 14:00 y 16:00 - 19:00</li>
+                <li><strong>Viernes:</strong> 09:00 - 14:00</li>
+                <li><strong>Sábados y Domingos:</strong> Cerrado</li>
+            </ul>
+
+            <h3 style="margin-top: 25px;"><i class="fa-solid fa-phone-flip"></i> Contacto Directo</h3>
+            <p>Teléfono: <strong>+34 656 693 708</strong></p>
+            <p>Email: <strong>administracionesescrich@administracionesescrich.com</strong></p>
+
+            <div style="margin-top: 25px; padding: 15px; background: #1f4d3a; color: white; border-radius: 5px; font-size: 0.85rem;">
+                <strong><i class="fa-solid fa-triangle-exclamation"></i> URGENCIAS:</strong><br>
+                Para avisos fuera de horario comercial, envíenos un mensaje vía WhatsApp o contacte con el servicio de asistencia de su comunidad.
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 ESCRICH Administración de Fincas</p>
+</footer>
+
+<a href="https://wa.me/34656693708" class="whatsapp-fixed" target="_blank">
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+</a>
+
+<script src="js/main.js"></script>
+<script>
+    function toggleMenu(){
+        const menu = document.getElementById("menu");
+        menu.classList.toggle("activo");
+    }
+</script>
+
+</body>
+</html>

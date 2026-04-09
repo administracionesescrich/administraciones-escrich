@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESCRICH Administración de Fincas</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        /* Estilos Base y WhatsApp */
+        .whatsapp-fixed { position: fixed; bottom: 20px; right: 20px; width: 45px; height: 45px; z-index: 10000; transition: transform 0.3s ease; }
+        .whatsapp-fixed img { width: 100%; height: 100%; display: block; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2)); }
+        .whatsapp-fixed:hover { transform: scale(1.1); }
+
+        /* Gestión Integral */
+        .gestion-integral { padding: 60px 20px; background: #f4f1ea; text-align: center; }
+        .box-integral { max-width: 1000px; margin: 0 auto; background: white; padding: 40px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        .frase-destacada { font-style: italic; font-size: 1.4rem; color: #1f4d3a; margin: 20px 0; font-weight: 500; }
+        .grid-servicios-index { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 30px; text-align: left; }
+        .item-servicio { padding: 20px; border-radius: 10px; border: 1px solid #eee; transition: 0.3s; background: #fff; }
+        .item-servicio:hover { border-color: #c5a059; background: #fffdf9; }
+        .item-servicio i { color: #c5a059; font-size: 1.5rem; margin-bottom: 10px; }
+        .item-servicio h4 { color: #1f4d3a; margin-bottom: 10px; border-bottom: 2px solid #f4f1ea; padding-bottom: 5px; }
+        .item-servicio ul { list-style: none; padding: 0; font-size: 0.9rem; color: #666; }
+        .item-servicio ul li { margin-bottom: 5px; }
+        .item-servicio ul li::before { content: "• "; color: #c5a059; }
+
+        /* Opiniones / Slider */
+        .slider { position: relative; max-width: 800px; margin: auto; overflow: hidden; padding: 20px; }
+        .slides { display: flex; transition: transform 0.5s ease; }
+        .opinion { min-width: 100%; box-sizing: border-box; padding: 40px; text-align: center; background: #f9f9f9; border-radius: 10px; }
+
+        /* Llamada a la Acción (CTA) */
+        .cta-final { background: #1f4d3a; color: white; padding: 60px 20px; text-align: center; margin-top: 40px; }
+        .cta-final h2 { color: #c5a059; margin-bottom: 15px; }
+        .cta-botones { margin-top: 30px; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+        .btn-cta { padding: 15px 30px; border-radius: 5px; text-decoration: none; font-weight: bold; transition: 0.3s; display: inline-flex; align-items: center; gap: 10px; }
+        .btn-presupuesto { background: #c5a059; color: white; }
+        .btn-contacto-index { background: white; color: #1f4d3a; }
+        .btn-cta:hover { transform: translateY(-3px); opacity: 0.9; }
+
+        @media (max-width: 768px) { .cta-botones { flex-direction: column; } }
+    </style>
+</head>
+<body>
+
+<header>
+    <img src="imagenes/logo.jpeg" class="logo" alt="Logo Escrich">
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <nav id="menu">
+        <a href="index.html">Inicio</a>
+        <a href="empresa.html">Empresa</a>
+        <a href="servicios.html">Servicios</a>
+        <a href="oficinas.html">Oficinas</a>
+        <a href="contacto.html">Contacto</a>
+        <a href="acceso.html" style="background: #c5a059; color: white; padding: 8px 15px; border-radius: 5px; margin-left: 15px; font-weight: bold;">Acceso Clientes</a>
+    </nav>
+</header>
+
+<section class="hero" data-animate>
+    <img src="imagenes/frachada.png" class="hero-img">
+    <div class="hero-text">
+        <h2>Administración de fincas ESCRICH</h2>
+        <p>Excelencia y transparencia en la gestión de su comunidad</p>
+    </div>
+</section>
+
+<div class="cifras">
+    <div class="cifra-item"><h3>+15</h3><p>Años de Experiencia</p></div>
+    <div class="cifra-item"><h3>+100</h3><p>Comunidades</p></div>
+    <div class="cifra-item"><h3>24h</h3><p>Gestión de Incidencias</p></div>
+    <div class="cifra-item"><h3>100%</h3><p>Transparencia</p></div>
+</div>
+
+<section class="gestion-integral" data-animate>
+    <div class="box-integral">
+        <h2>Un Único Proveedor, Todas las Soluciones</h2>
+        <p class="frase-destacada">“Nos encargamos de todo: administración, legal, seguros y gestión técnica en Torrejón de Ardoz.”</p>
+        <div class="grid-servicios-index">
+            <div class="item-servicio">
+                <i class="fa-solid fa-building"></i>
+                <h4>Administración</h4>
+                <ul>
+                    <li>Contabilidad clara y puntual</li>
+                    <li>Gestión eficaz de morosos</li>
+                    <li>Asistencia técnica a juntas</li>
+                </ul>
+            </div>
+            <div class="item-servicio" style="background: #fffdf0; border-color: #c5a059;">
+                <i class="fa-solid fa-scale-balanced"></i>
+                <h4>Abogados Escrich</h4>
+                <ul>
+                    <li>Departamento Jurídico Propio</li>
+                    <li>Asesoría Laboral y Mercantil</li>
+                    <li>Reclamaciones de morosidad</li>
+                </ul>
+            </div>
+            <div class="item-servicio">
+                <i class="fa-solid fa-wrench"></i>
+                <h4>Mantenimiento</h4>
+                <ul>
+                    <li>Atención de averías 24h</li>
+                    <li>Selección de proveedores</li>
+                    <li>Certificados energéticos</li>
+                </ul>
+            </div>
+            <div class="item-servicio">
+                <i class="fa-solid fa-shield-heart"></i>
+                <h4>Seguros</h4>
+                <ul>
+                    <li>Seguros de impago de alquiler</li>
+                    <li>Seguros de comunidad y hogar</li>
+                    <li>Tramitación de siniestros</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="opiniones" data-animate>
+    <h2>Opiniones de nuestros vecinos</h2>
+    <div class="slider">
+        <div class="slides" id="slides">
+            <div class="opinion"><p>"Excelente gestión y cercanía en Calle Londres."</p><strong>- Comunidad Torrejón</strong></div>
+            <div class="opinion"><p>"Tener abogados propios nos da mucha tranquilidad."</p><strong>- Vecinos Alcalá</strong></div>
+        </div>
+    </div>
+</section>
+
+<section class="cta-final" data-animate>
+    <h2>¿Buscas administrador en Torrejón?</h2>
+    <p>Solicita presupuesto sin compromiso. Estamos en Calle Londres, 50.</p>
+    <div class="cta-botones">
+        <a href="contacto.html" class="btn-cta btn-presupuesto"><i class="fa-solid fa-file-invoice-dollar"></i> SOLICITAR PRESUPUESTO</a>
+        <a href="tel:+34656693708" class="btn-cta btn-contacto-index"><i class="fa-solid fa-phone"></i> 656 693 708</a>
+    </div>
+</section>
+
+<footer><p>© 2026 ESCRICH Administración de Fincas</p></footer>
+
+<a href="https://wa.me/34656693708" class="whatsapp-fixed" target="_blank">
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+</a>
+
+<script>
+    function toggleMenu(){ document.getElementById("menu").classList.toggle("activo"); }
+    
+    let index = 0;
+    function moverSlider() {
+        const slides = document.getElementById("slides");
+        index = (index + 1) % 2;
+        slides.style.transform = `translateX(${-index * 100}%)`;
+    }
+    setInterval(moverSlider, 4000);
+
+    const elementos = document.querySelectorAll('[data-animate]');
+    function mostrarScroll(){
+        elementos.forEach(el => {
+            if(el.getBoundingClientRect().top < window.innerHeight * 0.9) el.classList.add('activo');
+        });
+    }
+    window.addEventListener('scroll', mostrarScroll);
+    window.addEventListener('load', mostrarScroll);
+</script>
+</body>
+</html>
